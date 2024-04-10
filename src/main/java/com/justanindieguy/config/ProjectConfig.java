@@ -20,9 +20,23 @@ public class ProjectConfig {
    * value to the context.
    */
   @Bean
-  Vehicle vehicle() {
+  Vehicle vehicle1() {
     var veh = new Vehicle();
-    veh.setName("Audi 8");
+    veh.setName("Audi");
+    return veh;
+  }
+
+  @Bean
+  Vehicle vehicle2() {
+    var veh = new Vehicle();
+    veh.setName("Honda");
+    return veh;
+  }
+
+  @Bean
+  Vehicle vehicle3() {
+    var veh = new Vehicle();
+    veh.setName("Ferrari");
     return veh;
   }
 
