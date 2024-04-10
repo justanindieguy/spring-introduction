@@ -19,8 +19,12 @@ public class Main {
      */
     var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
-    Vehicle veh = context.getBean(Vehicle.class);
-    System.out.println("Vehicle name from Spring context is: " + veh.getName());
+    Vehicle vehicle1 = context.getBean("vehicle1", Vehicle.class);
+    System.out.println("Vehicle1 name from Spring context is: " + vehicle1.getName());
+    Vehicle vehicle2 = context.getBean("vehicle2", Vehicle.class);
+    System.out.println("Vehicle2 name from Spring context is: " + vehicle2.getName());
+    Vehicle vehicle3 = context.getBean("vehicle3", Vehicle.class);
+    System.out.println("Vehicle3 name from Spring context is: " + vehicle3.getName());
 
     /*
      * We don't need to do any explicit casting while fetching a bean from context.
