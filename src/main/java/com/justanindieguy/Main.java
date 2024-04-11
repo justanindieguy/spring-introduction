@@ -27,6 +27,13 @@ public class Main {
     System.out.println("Vehicle3 name from Spring context is: " + vehicle3.getName());
 
     /*
+     * Retrieving the Bean of type Vehicle with primary annotation from Spring
+     * context.
+     */
+    Vehicle primaryVehicle = context.getBean(Vehicle.class);
+    System.out.println("Primary vehicle name from Spring context is: " + primaryVehicle.getName());
+
+    /*
      * We don't need to do any explicit casting while fetching a bean from context.
      * Spring is smart enough to look for a bean of the type you requested in its
      * context.

@@ -2,6 +2,7 @@ package com.justanindieguy.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import com.justanindieguy.beans.Vehicle;
 
@@ -26,6 +27,7 @@ public class ProjectConfig {
     return veh;
   }
 
+  @Primary
   @Bean(name = "hondaVehicle")
   Vehicle vehicle2() {
     var veh = new Vehicle();
@@ -33,6 +35,7 @@ public class ProjectConfig {
     return veh;
   }
 
+  // @Primary <- throws an exception, two Primary annotations for same type
   @Bean("ferrariVehicle")
   Vehicle vehicle3() {
     var veh = new Vehicle();
