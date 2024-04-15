@@ -14,7 +14,7 @@ public class Person {
    * is used to auto-wire the beans that is 'injecting beans' (Objects) at
    * runtime by Spring Dependency Injection mechanism
    */
-  @Autowired
+  @Autowired(required = false)
   private Vehicle vehicle;
 
   public Person() {
