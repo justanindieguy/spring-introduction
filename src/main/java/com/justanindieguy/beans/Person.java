@@ -1,11 +1,21 @@
 package com.justanindieguy.beans;
 
+import org.springframework.stereotype.Component;
+
+import jakarta.annotation.PostConstruct;
+
+@Component
 public class Person {
   private String name;
   private Vehicle vehicle;
 
   public Person() {
     System.out.println("Person bean created by Spring!");
+  }
+
+  @PostConstruct
+  public void initialize() {
+    name = "John";
   }
 
   public String getName() {
