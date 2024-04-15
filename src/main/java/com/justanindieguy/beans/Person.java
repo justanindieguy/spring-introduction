@@ -1,5 +1,6 @@
 package com.justanindieguy.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
@@ -7,10 +8,12 @@ import jakarta.annotation.PostConstruct;
 @Component
 public class Person {
   private String name;
-  private Vehicle vehicle;
+  private final Vehicle vehicle;
 
-  public Person() {
+  @Autowired
+  public Person(Vehicle vehicle) {
     System.out.println("Person bean created by Spring!");
+    this.vehicle = vehicle;
   }
 
   @PostConstruct
@@ -28,9 +31,5 @@ public class Person {
 
   public Vehicle getVehicle() {
     return vehicle;
-  }
-
-  public void setVehicle(Vehicle vehicle) {
-    this.vehicle = vehicle;
   }
 }
