@@ -10,7 +10,7 @@ public class Person {
   private String name;
   private final Vehicle vehicle;
 
-  @Autowired
+  @Autowired // <- Optional when there is only one constructor in class
   public Person(Vehicle vehicle) {
     System.out.println("Person bean created by Spring!");
     this.vehicle = vehicle;
