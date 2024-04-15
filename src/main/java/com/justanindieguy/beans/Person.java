@@ -10,11 +10,13 @@ import jakarta.annotation.PostConstruct;
 public class Person {
   private String name;
   private final Vehicle vehicle;
+  private final Computer computer;
 
   @Autowired
-  public Person(@Qualifier("vehicle2") Vehicle vehicle) {
+  public Person(@Qualifier("vehicle2") Vehicle vehicle, Computer computer) {
     System.out.println("Person bean created by Spring!");
     this.vehicle = vehicle;
+    this.computer = computer;
   }
 
   @PostConstruct
@@ -32,5 +34,9 @@ public class Person {
 
   public Vehicle getVehicle() {
     return vehicle;
+  }
+
+  public Computer getComputer() {
+    return computer;
   }
 }
