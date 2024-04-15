@@ -12,6 +12,7 @@ public class Main {
     Person person = context.getBean(Person.class);
     System.out.println("Person name from Spring Context is: " + person.getName());
     System.out.println("Vehicle that Person owns is: " + person.getVehicle());
+    System.out.println("Computer that Persons owns is: " + person.getComputer());
   }
 
 }
