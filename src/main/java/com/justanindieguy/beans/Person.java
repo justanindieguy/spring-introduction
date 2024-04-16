@@ -1,11 +1,24 @@
 package com.justanindieguy.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import jakarta.annotation.PostConstruct;
+
+@Component
 public class Person {
   private String name;
   private Vehicle vehicle;
 
-  public Person() {
+  @Autowired // <- Circular Dependency
+  public Person(Vehicle vehicle) {
     System.out.println("Person bean created by Spring!");
+    this.vehicle = vehicle;
+  }
+
+  @PostConstruct
+  public void initialize() {
+    name = "John";
   }
 
   public String getName() {

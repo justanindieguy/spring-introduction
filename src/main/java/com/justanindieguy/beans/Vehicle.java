@@ -1,5 +1,6 @@
 package com.justanindieguy.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
@@ -7,6 +8,9 @@ import jakarta.annotation.PostConstruct;
 @Component
 public class Vehicle {
   private String name;
+
+  @Autowired // <- Circular Dependency
+  private Person person;
 
   @PostConstruct
   public void initialize() {
@@ -19,6 +23,14 @@ public class Vehicle {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public void setPerson(Person person) {
+    this.person = person;
+  }
+
+  public Person getPerson() {
+    return person;
   }
 
   @Override
